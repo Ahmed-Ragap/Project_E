@@ -1,0 +1,579 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -os-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  /*
+    perspective: 400px;
+*/
+}
+body {
+  overflow: hidden;
+}
+body h2,
+h3,
+h4 {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 700;
+}
+body span,
+p {
+  font-family: "Oxygen", Helvetica, Arial, sans-serif;
+  font-style: italic;
+}
+
+body button {
+  outline: none !important;
+  text-transform: capitalize !important;
+}
+
+/*start fram work to this site*/
+
+/*start site elements color*/
+$main-color: #000000;
+$second-color: #2bde73;
+$p-color: #ddd;
+$h-color: #fff;
+$main-font: 14px;
+/*end site elements color*/
+
+%main-div {
+  position: relative;
+  margin-top: 0;
+  margin-left: 0;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+%over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 1, 0.6) !important;
+}
+%button {
+  margin: 20px auto;
+  border: 1px solid $h-color;
+  width: 120px;
+  padding: 8px;
+  background-color: transparent;
+  color: $h-color;
+  outline: none;
+  cursor: pointer;
+
+  %h-style {
+    text-transform: uppercase;
+    padding-bottom: 20px !important;
+  }
+  %h-before {
+    content: "";
+    position: absolute;
+    height: 54px;
+    border: 3px solid #08d9d6;
+    left: 0px;
+    top: 6px;
+  }
+  &:hover {
+    background-color: $second-color;
+    border-color: $second-color;
+  }
+}
+
+@mixin transition($t) {
+  -webkit-transition: all $t ease-in-out;
+  -moz-transition: all $t ease-in-out;
+  -ms-transition: all $t ease-in-out;
+  -o-transition: all $t ease-in-out;
+  transition: all $t ease-in-out;
+}
+
+@mixin border-R($b) {
+  -webkit-border-radius: $b;
+  -moz-border-radius: $b;
+  -ms-border-radius: $b;
+  -o-border-radius: $b;
+  border-radius: $b;
+}
+
+/*end fram work to this site*/
+/*this style for ffbar*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: $second-color;
+  border: none;
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: $main-color;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: $second-color;
+  @include transition(0.4s);
+}
+
+/*this clas will be added to navbar after scrolling  to top */
+
+.active-li {
+  color: $p-color !important;
+}
+
+/*adding style to navbar after scroll*/
+.scroll {
+  /*   border-bottom: 1px solid $p-color;
+*/
+  box-shadow: 0 0 25px -2px #000;
+  -webkit-box-shadow: 0 0 25px -2px #000;
+  -moz-box-shadow: 0 0 25px -2px #000;
+  box-shadow: 0 0 25px -2px #000;
+  -webkit-box-shadow: 0 0 25px -2px #000;
+  -moz-box-shadow: 0 0 25px -2px #000;
+  background-color: #333;
+
+  /*start navbar style*/
+}
+nav {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100%;
+  z-index: 9999;
+  text-transform: capitalize;
+  overflow: hidden;
+  @include transition(0.2s);
+
+  a {
+    color: $second-color;
+  }
+  ul {
+    direction: ltr !important;
+    width: 100%;
+    float: right !important;
+    /*start media for min screen size 991px */
+    @media (min-width: 991px) {
+      margin-left: 35% !important;
+      justify-content: space-around;
+    }
+    /*end media for min screen size 991px */
+
+    li {
+      margin: 0 0.8%;
+      float: right;
+      @media (max-width: 991px) {
+        margin-top: 10px;
+      }
+
+      a {
+        cursor: pointer;
+        font-size: $main-font + 3px;
+        color: $second-color;
+      }
+    }
+  }
+}
+.navbar .content-icon {
+  height: 40px;
+  @include transition(0.4s);
+  @media (min-width: 992px) {
+    border: none;
+  }
+  img {
+    border: none;
+    width: 70px;
+    height: 42px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+.navbar .nav-item .nav-link {
+  color: $h-color;
+  border-bottom: 2px solid transparent;
+  @include transition(0.4s);
+  &:active,
+  &:focus {
+    color: $second-color !important;
+    border-bottom: 2px solid $second-color;
+  }
+  @media (max-width: 991px) {
+    &:active,
+    &:focus {
+      border-bottom: none !important;
+    }
+  }
+}
+.navbar .nav-item .nav-link:hover {
+  color: $p-color;
+
+  @media (max-width: 991px) {
+    border-color: transparent;
+
+    /* background-color: $second-color;*/
+    outline: none;
+  }
+}
+
+.navbar button {
+  cursor: pointer;
+}
+.navbar-toggler.navbar-toggler-right {
+  background-color: $h-color;
+}
+
+.navbar li.nav-item.butt .lang {
+  @include transition(0.5s);
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  background-color: transparent;
+  border: 1px solid $h-color;
+  @include border-R(10px);
+  margin-top: 4px;
+  color: #fff !important;
+}
+
+.navbar li.nav-item.butt a {
+  opacity: 0;
+  background-color: transparent;
+  display: block;
+  text-decoration: none;
+  text-transform: capitalize;
+  position: absolute;
+  margin: 3px 0;
+  position: absolute;
+  box-sizing: border-box;
+  border: 1px solid $second-color;
+  @include border-R(10px);
+  color: $second-color !important;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  &:hover {
+    background-color: $second-color;
+    color: $h-color !important;
+    border-color: $second-color;
+  }
+}
+.navbar li.nav-item.butt a.first {
+  margin-top: 18px;
+}
+.navbar li.nav-item.butt a.second {
+  margin-top: 52px;
+}
+.toggle-fad {
+  @include transition(0.5s);
+  opacity: 1 !important;
+}
+.show {
+  overflow: visible;
+}
+
+/*end navbar style*/
+
+/*start header slement style*/
+header {
+  @extend %main-div;
+  min-height: 550px;
+  background-image: url("../img/3.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  max-width: 100%;
+  .over {
+    @extend %over;
+    background-color: rgba($main-color, 0.7) !important;
+  }
+  .container {
+    position: relative;
+    .main-con {
+      width: 500px;
+      text-align: left;
+      margin-left: calc(50% - 250px);
+      h3 {
+        font-weight: bold;
+        padding-top: 150px;
+        font-size: $main-font + 15px;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        text-align: left;
+        color: $h-color;
+        span.style {
+          display: inline-block;
+        }
+      }
+      span {
+        display: block;
+        padding-top: 0;
+        color: $p-color;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+      }
+
+      button {
+        @extend %button;
+        display: block;
+        margin-left: 0;
+        margin-top: 10px;
+        outline: none;
+        @include border-R(15px);
+        @include transition(0.2s);
+        &:hover {
+          a {
+            color: $h-color;
+          }
+        }
+        a {
+          text-decoration: none;
+          color: $second-color;
+          @include transition(0.2s);
+        }
+      }
+      /*start media for small screen*/
+      @media (max-width: 575px) {
+        width: 90%;
+        margin-left: 5%;
+      }
+    }
+  }
+}
+/*start after-header-contents div elements style*/
+.after-header-contents {
+  margin-top: -170px;
+  .container {
+    .row {
+      .col-md-4 {
+        margin-top: 37px;
+        .main-co {
+          @include border-R(5px);
+          border: 10px solid $h-color;
+          min-height: 200px;
+          background-color: $p-color;
+          i {
+            text-align: center;
+            display: block;
+            padding: 20px 0 20px 0;
+            font-weight: bold;
+            font-size: $main-font + 15px;
+            color: $second-color;
+          }
+          h4 {
+            text-transform: capitalize;
+            text-align: center;
+          }
+          span {
+            text-transform: capitalize;
+            width: 90%;
+            margin-left: 5%;
+            display: block;
+            text-align: center;
+            padding-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*start some info div elements style */
+.som-info {
+  margin-top: 200px;
+  margin-bottom: 100px;
+  .row {
+    .col-md-4 {
+      h3.head {
+        width: 258px;
+        font-size: 36px;
+        span.style {
+          color: $second-color;
+          padding-bottom: 4px;
+          &:before {
+            position: absolute;
+            top: 20px;
+            border-bottom: 3px solid $second-color;
+            @include border-R(2px);
+            width: 20px;
+          }
+        }
+      }
+    }
+    .col-md-8 {
+      .cont {
+        span {
+          display: block;
+          text-transform: capitalize;
+          color: #999;
+          line-height: 1.5;
+          text-align: left;
+        }
+        button {
+          @extend %button;
+          display: block;
+          margin-left: 0;
+          margin-top: 10px;
+          outline: none;
+          border: 1px solid $second-color;
+          @include border-R(15px);
+          @include transition(0.4s);
+          &:hover {
+            a {
+              color: $h-color;
+            }
+          }
+          a {
+            text-decoration: none;
+            color: $second-color;
+            @include transition(0.4s);
+          }
+        }
+      }
+    }
+  }
+}
+
+/*start copy-right div elements style */
+
+.copy-right {
+  min-height: 40px;
+  background-color: rgba($main-color, 0.6);
+  .container {
+    text-align: center;
+    .row {
+      .col-sm-12 {
+        span {
+          line-height: 3;
+          color: $h-color;
+        }
+        button {
+          cursor: pointer;
+          width: 30px;
+          height: 30px;
+          @include border-R(50%);
+          border: 1px solid $h-color;
+          margin: 10px 10px;
+          display: inline-block;
+          background-color: transparent;
+          @include transition(0.2s);
+          &:hover {
+            border: 1px solid transparent;
+            i {
+            }
+          }
+          a {
+            text-decoration: none;
+            color: $h-color;
+            i {
+              font-size: $main-font;
+            }
+          }
+        }
+        button:nth-of-type(1) {
+          color: #3b5998;
+        }
+        button:nth-of-type(2) {
+          color: #00a0dc;
+        }
+        button:nth-of-type(3) {
+          color: #430297;
+        }
+      }
+    }
+  }
+}
+
+$width: 50px;
+$height: 50px;
+
+$dark: #323232;
+$red: #ff5a5f;
+$blue: #2ab7ca;
+$light: #d7d0c8;
+
+.main-load {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $h-color;
+  z-index: 9999999;
+  .spinner {
+    display: flex;
+    align-items: center;
+    width: $width;
+    height: $height;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+
+    &__bar {
+      margin-right: 5px;
+      height: 20px;
+      width: 10px;
+      border-radius: 5px;
+      animation: bars 1000ms infinite cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.spinner__bar:nth-child(1) {
+  animation-delay: 0ms;
+  background: $dark;
+}
+.spinner__bar:nth-child(2) {
+  animation-delay: 200ms;
+  background: $red;
+}
+.spinner__bar:nth-child(3) {
+  animation-delay: 400ms;
+  background: $blue;
+}
+.spinner__bar:nth-child(4) {
+  animation-delay: 600ms;
+  background: $light;
+}
+
+@keyframes bars {
+  0% {
+    height: 20px;
+  }
+  50% {
+    height: 40px;
+  }
+  100% {
+    height: 20px;
+  }
+}
+@-webkit-keyframes bars {
+  0% {
+    height: 20px;
+  }
+  50% {
+    height: 40px;
+  }
+  100% {
+    height: 20px;
+  }
+}
+@-moz-keyframes bars {
+  0% {
+    height: 20px;
+  }
+  50% {
+    height: 40px;
+  }
+  100% {
+    height: 20px;
+  }
+}
+
+/******************
+  all coy right are reserved to this design   thanks for reading  this few word 
+
+*****************/

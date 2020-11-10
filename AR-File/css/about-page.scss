@@ -1,0 +1,151 @@
+@import "./style.scss";
+/*start style for about bage*/
+.about-ifo {
+  background-color: #999;
+  padding-top: 100px;
+  .container {
+    text-align: center;
+    .row {
+      .col-sm-12 {
+        i {
+          font-size: $main-font + 20px;
+          color: $second-color;
+          margin: 15px auto;
+        }
+        h3 {
+          text-transform: capitalize;
+          color: $h-color;
+        }
+        span {
+          display: block;
+          text-transform: capitalize;
+          color: $h-color;
+          padding: 0 0 70px 0;
+        }
+      }
+      .col-md-6 {
+        .main {
+          span {
+            text-align: right;
+            line-height: 1.2;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}
+/*start style for about dv elements */
+.about {
+  @extend %main-div;
+  background-image: url(../../img/7.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 700px;
+  .over {
+    @extend %over;
+    background-color: rgba($main-color, 0.7) !important;
+  }
+  .container {
+    .main-con {
+      position: relative;
+      h3 {
+        color: $h-color;
+        padding-top: 100px;
+        text-align: center;
+        text-transform: capitalize;
+        span {
+          &:before {
+            position: absolute;
+            border: 4px solid red;
+            width: 10px;
+            margin-top: 20px;
+          }
+        }
+      }
+      span.end {
+        color: $p-color;
+        display: block;
+        text-transform: uppercase;
+        margin: 0 auto;
+        text-align: center;
+        font-size: $main-font - 3px;
+      }
+    }
+    .row {
+      -webkit-box-shadow: 0 2px 10px #000;
+      -moz-box-shadow: 0 2px 10px #000;
+      -ms-box-shadow: 0 2px 10px #000;
+      -o-box-shadow: 0 2px 10px #000;
+      box-shadow: 0 2px 10px #000;
+      background-color: rgba($main-color, 0.8) !important;
+      min-height: 250px;
+      margin-top: 100px;
+      @media (max-width: 767px) {
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        -ms-box-shadow: none;
+        -o-box-shadow: none;
+        box-shadow: none;
+      }
+      .col-sm-12 {
+        .main-con-2 {
+          h4 {
+            text-align: right;
+            color: $second-color;
+            padding-top: 40px;
+            text-transform: uppercase;
+          }
+          span {
+            text-align: right;
+            margin: 10px 0;
+            display: block;
+            color: $p-color;
+            text-transform: capitalize;
+          }
+          button {
+            @extend %button;
+            display: block;
+            margin-right: 0;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            outline: none;
+            @include border-R(15px);
+            @include transition(0.3s);
+            &:hover {
+              a {
+                color: $h-color;
+              }
+            }
+            a {
+              text-decoration: none;
+              color: $second-color;
+              @include transition(0.3s);
+            }
+          }
+        }
+      }
+      .col-sm-12.tow {
+        .img {
+          background-image: url(../../img/about.png);
+          background-size: cover;
+          margin: 0 auto;
+          height: 320px;
+          width: 360px;
+          margin-top: -70px;
+          /*start media screen size */
+          @media (min-width: 768px) and (max-width: 991px) {
+            height: 314px;
+            width: 355px;
+            margin-top: -23px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/******************
+  all coy right are reserved to this design   thanks for reading  this few word 
+
+*****************/

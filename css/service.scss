@@ -1,0 +1,214 @@
+@import "./style.scss";
+
+/*start style for service div elements*/
+
+.service-info {
+  @extend %main-div;
+  background-image: url(../img/3.jpg);
+  background-attachment: fixed;
+  min-height: 600px;
+  @extend %main-div;
+  .over {
+    @extend %over;
+    background-color: rgba($main-color, 0.7) !important;
+  }
+  .container {
+    /*start first-row*/
+    .row {
+      .col-sm-12 {
+        .main {
+          width: 765px;
+          margin-top: 170px;
+          background-color: rgba($second-color, 0.7) !important;
+          float: left;
+          clear: fix;
+          position: relative;
+          &:after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            margin-top: 65px;
+            margin-left: 45%;
+            border-top: 60px solid rgba($second-color, 0.7);
+            /*start media screen size */
+            @media (max-width: 992px) {
+              margin-left: 25%;
+            }
+          }
+          .animated-content {
+            min-height: 50px;
+            /*start media screen size */
+            @media (max-width: 992px) {
+              min-height: 80px;
+            }
+            h3 {
+              margin: 30px 0 0 20px;
+              display: inherit;
+              text-transform: uppercase;
+              color: $h-color;
+              span.typed-cursor {
+                display: inline-block;
+              }
+            }
+          }
+          span {
+            width: 80%;
+            display: block;
+            color: $p-color;
+            padding-left: 20px;
+            text-transform: uppercase;
+          }
+          button {
+            position: relative;
+            @include transition(0.4s);
+            @extend %button;
+            width: 150px;
+            cursor: pointer;
+            border-color: $h-color;
+            margin: 15px 0 20px 20px;
+            text-align: center;
+            @include border-R(10px);
+            outline: none;
+            height: 30px;
+            background-color: transparent;
+
+            a {
+              display: block;
+              color: $p-color;
+              font-size: $main-font - 2px;
+              text-align: center;
+              text-decoration: none;
+              text-transform: uppercase;
+            }
+          }
+          /*start media screen size */
+          @media (max-width: 992px) {
+            width: 90%;
+          }
+        }
+      }
+    }
+    /*start second-row*/
+    .row.second {
+      padding: 200px 0 100px 0;
+      .col-sm-12 {
+        margin-top: 50px;
+        text-align: center;
+
+        .main-div {
+          margin: 0 auto;
+          width: 100%;
+          border: none !important;
+          text-align: center;
+          overflow: hidden !important;
+          @include transition(0.4s);
+
+          &:hover {
+            button {
+              background-color: $second-color;
+              border-color: $second-color;
+            }
+          }
+          .img {
+            position: relative;
+            background-image: url(../img/ser-2.png);
+            background-size: cover;
+            height: 80px;
+            width: 80px;
+            @include border-R(50%);
+            margin-top: 30px;
+            margin-left: calc(50% - 40px);
+          }
+          h4 {
+            padding: 10px 0 20px 0;
+            text-transform: capitalize;
+            position: relative;
+          }
+          ul {
+            position: relative;
+            li {
+              @include transition(0.4s);
+              padding: 4px 4px;
+              display: block;
+              padding: 10px 0;
+              list-style-type: none;
+              text-transform: capitalize;
+              width: 80%;
+              margin: 0 auto;
+              &:hover {
+                background-color: #aaa;
+                padding-left: 10px;
+              }
+            }
+          }
+          span {
+            text-transform: capitalize;
+            font-weight: bold;
+            display: block;
+            position: relative;
+            padding: 20px 0 10px 0;
+            span {
+              font-size: $main-font + 10px;
+              color: red;
+              padding: 0 5px 0 5px;
+              display: inline-block;
+            }
+          }
+          button {
+            position: relative;
+            @include transition(0.4s);
+            @extend %button;
+            @include border-R(10px);
+            outline: none;
+
+            a {
+              text-decoration: none;
+              color: $h-color;
+            }
+          }
+        }
+      }
+      .col-sm-12.first {
+        .main-div {
+          background-color: #888;
+          button {
+            /**/
+          }
+        }
+      }
+      .col-sm-12.second {
+        .main-div {
+          background-color: #777;
+          .img {
+            background-image: url(../img/ser-1.png);
+          }
+        }
+      }
+      .col-sm-12.thireed {
+        .main-div {
+          position: relative;
+          background-image: url(../img/1.jpg);
+          background-size: cover;
+          .img {
+            background-image: url(../img/ser-4.png);
+          }
+
+          .over {
+            @extend %over;
+            background-color: rgba(246, 0, 60, 0.7) !important;
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+}
+/*start copy-right div elements style */
+
+/******************
+  all coy right are reserved to this design   thanks for reading  this few word 
+
+*****************/
